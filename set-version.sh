@@ -1,0 +1,16 @@
+#!/bin/bash
+
+VERSION="$1"
+TUWCU=TUWcurriculum
+
+[ "$VERSION" ] || { echo "please specify version"; exit 1; }
+[ -d "$TUWCU" ] || { echo "folder '$TUWCU' not found"; exit 1; }
+
+cd "$TUWCU"
+for f in TUWbachelor.tex TUWcurriculum.cls TUWdeckblatt.tex TUWmaster.tex TUWmodul.tex; do
+    echo
+    echo "*** $f ***"
+    sed "s/TU Wien Curriculum [0-9.]*/TU Wien Curriculum $VERSION/" "$f" > tmp
+    diff "$f" tmp
+    mv tmp "$f"
+done

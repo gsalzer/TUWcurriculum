@@ -1,0 +1,77 @@
+% TU Wien Curriculum 2023.2
+
+\ifENTWURF
+  \pagebreak
+  \tcbset{colframe=blue!80!black,center title}
+  \subsection*{\tcbox[tcbox raise base]{\parbox{0.92\textwidth}{\MVAR{Titel}}}}
+\else
+  \subsection*{\MVAR{Titel}}
+\fi
+
+\ifMDEF{Ects}{%
+  \paragraph{Regelarbeitsaufwand:} \ECTS{\MVAR{Ects}}%
+}{}%
+
+\ifMDEF{KompetenzenIntro,KompetenzenFachlichMethodisch,%
+  KompetenzenKognitivPraktisch,KompetenzenSozialSelbst}{%
+  \paragraph{Lernergebnisse:}%
+  \ifMDEF{KompetenzenIntro}{%
+    \MVAR{KompetenzenIntro}%
+  }{}%
+  \ifMDEF{KompetenzenFachlichMethodisch}{%
+    \subparagraph{Fachliche und methodische Kompetenzen:}%
+      \MVAR{KompetenzenFachlichMethodisch}%
+  }{}%
+  \ifMDEF{KompetenzenKognitivPraktisch}{%
+    \subparagraph{Kognitive und praktische Kompetenzen:}%
+      \MVAR{KompetenzenKognitivPraktisch}%
+  }{}%
+  \ifMDEF{KompetenzenSozialSelbst}{%
+    \subparagraph{Soziale Kompetenzen und Selbstkompetenzen:}%
+      \MVAR{KompetenzenSozialSelbst}%
+  }{}%
+}{}%
+
+\ifMDEF{Inhalt}{%
+  \paragraph{Inhalt:}%
+  \MVAR{Inhalt}%
+  }{}%
+
+\ifMDEF{VorkenntnisseIntro,VorkenntnisseFachlichMethodisch,%
+  VorkenntnisseKognitivPraktisch,VorkenntnisseSozialSelbst,Vormodule}{%
+  \paragraph{Erwartete Vorkenntnisse:}%
+    \ifMDEF{VorkenntnisseIntro}{\MVAR{VorkenntnisseIntro}}{}%
+  \ifMDEF{VorkenntnisseFachlichMethodisch}{%
+    \subparagraph{Fachliche und methodische Kompetenzen:}%
+    \MVAR{VorkenntnisseFachlichMethodisch}%
+  }{}%
+  \ifMDEF{VorkenntnisseKognitivPraktisch}{%
+    \subparagraph{Kognitive und praktische Kompetenzen:}%
+    \MVAR{VorkenntnisseKognitivPraktisch}%
+  }{}%
+  \ifMDEF{VorkenntnisseSozialSelbst}{%
+    \subparagraph{Soziale Kompetenzen und Selbstkompetenzen:}%
+    \MVAR{VorkenntnisseSozialSelbst}%
+  }{}%
+  \ifMDEF{Vormodule}{%
+    \smallskip\par\noindent
+    \MVAR{Vormodule}%
+  }{}%
+}{}%
+
+\ifMDEF{VerpflichtendeVoraussetzungen}{%
+  \paragraph{Verpflichtende Voraussetzungen:}%
+  \MVAR{VerpflichtendeVoraussetzungen}%
+}{}%
+
+\ifMDEF{LehrLernformenBeurteilung}{%
+  \paragraph{Angewendete Lehr- und Lernformen und geeignete Leistungsbeurteilung:}
+  \MVAR{LehrLernformenBeurteilung}%
+}{}%
+
+\ifMDEF{Lehrveranstaltungen}{%
+  \paragraph{Lehrveranstaltungen des Moduls:}%
+  \begin{SammleLVs}%
+    \MVAR{Lehrveranstaltungen}%
+  \end{SammleLVs}%
+}{}%

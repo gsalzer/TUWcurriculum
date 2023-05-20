@@ -1,0 +1,88 @@
+% TU Wien Curriculum 2023.2
+
+\newfontfamily\TUtext{TUTextRegular.ttf}%
+  [Path = \currfiledir\TUWfonts/,%
+   ItalicFont     = TUTextRegularItalic.ttf,%
+   BoldFont       = TUTextMedium.ttf,%
+   BoldItalicFont = TUTextMediumItalic.ttf%
+  ]
+\newfontfamily\TUlight{TUTextLight.ttf}%
+  [Path = \currfiledir\TUWfonts/,%
+   ItalicFont     = TUTextLightItalic.ttf,%
+   BoldFont       = TUTextRegular.ttf,%
+   BoldItalicFont = TUTextRegularItalic.ttf%
+  ]
+\newfontfamily\TUhead{TUHeadlineRegular.ttf}%
+  [Path = \currfiledir\TUWfonts/,%
+   BoldFont       = TUHeadlineBold.ttf%
+  ]
+\begin{titlepage}
+\definecolor{tublau}{rgb}{0,0.3984375,0.59765625} % (0,102,153)=#006699 Norm
+\definecolor{tublau2}{rgb}{0.0546875,0.421875,0.69140625} % (14,108,177)=#0e6cb1 TU Logo
+\definecolor{tublau3}{rgb}{0.1640625,0.38671875,0.62109375} % (42,99,159)=#2a639f Vorlage Kreuzeder
+\colorlet{blau}{tublau3}
+\definecolor{grauschrift}{rgb}{0.24609375,0.23828125,0.23828125} % (63,61,61) = #3f3d3d
+\definecolor{graulinie}{rgb}{0.4296875,0.41796875,0.421875} % (110,107,108) = #6e6b6c
+\tikzset
+  {art/.style={rounded corners=11pt,anchor=north west,minimum height=1.3cm,text width=3.9cm}
+  }
+\newcommand\selected[2]%
+  {\draw (current page.north east)+(-4.35cm,-#1cm)
+   node[art,draw=blau,fill=blau,text=white,inner sep=3.5mm] {\fontsize{13}{17}\selectfont #2};
+  }
+\newcommand\unselected[2]%
+  {\draw (current page.north east)+(-3.85cm,-#1cm)
+   node[art,draw=graulinie,fill=white,line width=1pt,text=grauschrift,inner sep=2mm]{\fontsize{11}{15}\selectfont #2};
+  }
+\let\MarkierungBachelor\unselected
+\let\MarkierungMaster  \unselected
+\let\MarkierungDoktorat\unselected
+\let\MarkierungLehrgang\unselected
+\expandafter\let\csname Markierung\Markierung\endcsname\selected
+\newcommand\decoline[3]%
+  {\draw[line width=1pt,draw=blau]
+     (current page.north east)+(#2) to[bend right=#1]
+     ($(current page.south west)+(#3)$);
+  }
+\newcommand\cbox[3]%
+  {\node[draw=graulinie,fill=white,line width=1pt,text=grauschrift,
+        rounded corners=11pt,minimum width=18.4cm,minimum height=#2cm,
+        inner sep=0pt,align=center,font=\fontsize{13}{20}\selectfont
+        ]
+    at ($(current page.center)+(0,#1cm)$) {#3};
+  }
+\TUtext
+\begin{tikzpicture}[remember picture,overlay]
+  \draw (current page.north west)+(1.145cm,-1.141cm)
+    node[anchor=north west] {\includegraphics[height=2.444cm]{TUWlogo}};
+  \decoline{10}{-3.3cm,-2cm}{4.7cm,0}
+  \decoline{10}{-3cm,-3.5cm}{3.5cm,0}
+  \decoline{10}{-2.5cm,-5cm}{2.7cm,0}
+  \decoline{12}{-0.5cm,-6.5cm}{0,2cm}
+  \MarkierungBachelor{1.25}{Bachelor}
+  \MarkierungMaster{2.75}{Master}
+  \MarkierungDoktorat{4.25}{Doktorat}
+  \MarkierungLehrgang{5.75}{Universitäts-\\lehrgang}
+  \cbox{2.6}{5.65}%
+    {\TUhead\fontsize{18}{22}\selectfont Studienplan (Curriculum)\\[2pt]
+     \TUhead\fontsize{18}{22}\selectfont für \ArtikelAkkusativStudienart\\[20pt]
+     \TUhead\fontsize{18}{20}\selectfont\color{blau} \Studienart\\[6pt]
+     \TUhead\fontsize{22}{20}\selectfont\color{blau}%
+     \VAR{Titel}\\[7pt]
+     \TUhead\fontsize{23}{20}\selectfont\color{blau}%
+     \VAR{Kennzahl}%
+    }
+  \cbox{-2.85}{3.55}%
+    {Technische Universität Wien\\
+     Beschluss des Senats der Technischen Universität Wien\\
+     \TUWuse{}{Beschlossen}%
+    }
+  \cbox{-5.93}{0.9}{Gültig ab \VAR{GueltigAb}}
+  \ifENTWURF
+    \cbox{-8.5}{2.5}%
+     {Version: \TUWuse{}{Version}\\
+      Redaktion: \TUWuse{}{Redaktion}%
+     }
+  \fi
+\end{tikzpicture}
+\end{titlepage}
