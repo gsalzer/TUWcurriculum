@@ -1,4 +1,4 @@
-%% TU Wien Curriculum 2023.2
+%% TU Wien Curriculum 2023.3
 %% Copyright 2023 G. Salzer
 %
 % This work may be distributed and/or modified under the
@@ -16,7 +16,7 @@
 % This work consists of the file TUWcurriculum.cls.
 
 % Class stuff
-\ProvidesClass{TUWcurriculum}[TU Wien Curriculum 2023.2]
+\ProvidesClass{TUWcurriculum}[TU Wien Curriculum 2023.3]
 \RequirePackage{xcolor}
 \LoadClass[a4paper,12pt]{scrartcl}
 \setcounter{tocdepth}{1}
@@ -713,7 +713,6 @@
 
 \newcommand*\DECKBLATT{%
   \ifTUDECKBLATT
-    \newcommand\TUWfonts{TUWfonts}
     \input{TUWdeckblatt}
   \else
     \begin{titlepage}
