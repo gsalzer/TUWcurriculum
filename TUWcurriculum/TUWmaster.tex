@@ -1,4 +1,4 @@
-% TU Wien Curriculum 2023.4
+% TU Wien Curriculum 2023.5
 
 \newcommand*\Markierung{Master}
 \newcommand*\Studienart{Masterstudium}
@@ -262,9 +262,12 @@ Studierbarkeit eingesetzt werden.
 \newcommand*\PFDA{% Prüfungsfach Diplomarbeit
   \ifDASEMINAR{%
     \LV{1,5}{1,0}{SE}{Seminar für Diplomand\_innen}[SeminarFuerDiplomandInnen]\\
-  }{}%
-  \hspace*{0.9mm} \ECTS{27,0} \hspace*{-0.4mm} Diplomarbeit \\
-  \hspace*{0.9mm} \ECTS{3,0} \hspace*{1.6mm} Kommissionelle Abschlussprüfung%
+    \ECTS{27,0} \hspace*{1.5mm} Diplomarbeit \\
+    \hspace*{0.9mm} \ECTS{1,5} \hspace*{1.6mm} Kommissionelle Abschlussprüfung%
+  }{%
+    \ECTS{27,0} \hspace*{0.5mm} Diplomarbeit \\
+    \hspace*{0.9mm} \ECTS{3,0} \hspace*{1.6mm} Kommissionelle Abschlussprüfung%
+  }%
 }
 \let\PFDASem\PFDA % backwards compatibility
 

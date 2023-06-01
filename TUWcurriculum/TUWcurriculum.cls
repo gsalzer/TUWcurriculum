@@ -1,4 +1,4 @@
-%% TU Wien Curriculum 2023.4
+%% TU Wien Curriculum 2023.5
 %% Copyright 2023 G. Salzer
 %
 % This work may be distributed and/or modified under the
@@ -16,7 +16,7 @@
 % This work consists of the file TUWcurriculum.cls.
 
 % Class stuff
-\ProvidesClass{TUWcurriculum}[TU Wien Curriculum 2023.4]
+\ProvidesClass{TUWcurriculum}[TU Wien Curriculum 2023.5]
 \RequirePackage{xcolor}
 \LoadClass[a4paper,12pt]{scrartcl}
 \setcounter{tocdepth}{1}
