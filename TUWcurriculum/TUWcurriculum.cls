@@ -1,4 +1,4 @@
-%% TU Wien Curriculum 2023.5
+%% TU Wien Curriculum 2023.6
 %% Copyright 2023 G. Salzer
 %
 % This work may be distributed and/or modified under the
@@ -16,7 +16,7 @@
 % This work consists of the file TUWcurriculum.cls.
 
 % Class stuff
-\ProvidesClass{TUWcurriculum}[TU Wien Curriculum 2023.5]
+\ProvidesClass{TUWcurriculum}[TU Wien Curriculum 2023.6]
 \RequirePackage{xcolor}
 \LoadClass[a4paper,12pt]{scrartcl}
 \setcounter{tocdepth}{1}
@@ -475,7 +475,8 @@
 % BACHELOR
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newenvironment{Bachelor}{
+\newenvironment{Bachelor}[1][TUWbachelor]{
+  \gdef\TUWbachelor{#1}
   \BachelorBeginHook
   \CURnewcmd{Titel}
   \CURnewcmd{Kennzahl}
@@ -527,9 +528,7 @@
   \ifDEF{Module}{\LadeModule{\VAR{Module}}}{}
   \ifDEF{ExterneModule}{\LadeModule{\VAR{ExterneModule}}}{}
   \LVcsv{lvas.csv}
-  \begin{document}
-  \input{TUWbachelor}
-  \end{document}
+  \input{\TUWbachelor}
 }
 
 
@@ -537,7 +536,8 @@
 % MASTER
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newenvironment{Master}{
+\newenvironment{Master}[1][TUWmaster]{
+  \gdef\TUWmaster{#1}
   \MasterBeginHook
   \CURnewcmd{Titel}
   \CURnewcmd{Kennzahl}
@@ -595,9 +595,7 @@
   \ifDEF{Module}{\LadeModule{\VAR{Module}}}{}
   \ifDEF{ExterneModule}{\LadeModule{\VAR{ExterneModule}}}{}
   \LVcsv{lvas.csv}
-  \begin{document}
-  \input{TUWmaster}
-  \end{document}
+  \input{\TUWmaster}
 }
 
 
