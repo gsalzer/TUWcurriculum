@@ -1,4 +1,4 @@
-%% TU Wien Curriculum 2023.6
+%% TU Wien Curriculum 2023.7
 %% Copyright 2023 G. Salzer
 %
 % This work may be distributed and/or modified under the
@@ -15,8 +15,16 @@
 %
 % This work consists of the file TUWcurriculum.cls.
 
+% Make the path of the current file the new \input@path
+\@ifundefined{currfiledir}{%
+  \RequirePackage{currfile}
+  \input{TUWcurriculum.cls}
+  \endinput
+}{}
+\edef\input@path{{\currfiledir}{module/}{../shared/}{../../shared/}{../../../shared/}}
+
 % Class stuff
-\ProvidesClass{TUWcurriculum}[TU Wien Curriculum 2023.6]
+\ProvidesClass{TUWcurriculum}[TU Wien Curriculum 2023.7]
 \RequirePackage{xcolor}
 \LoadClass[a4paper,12pt]{scrartcl}
 \setcounter{tocdepth}{1}
@@ -33,19 +41,19 @@
 \newcommand\ifDASEMINAR[2]{\if@DASEMINAR#1\else#2\fi}
 \newif\if@Modulverantwortliche
 \newcommand\ifModulverantwortliche[2]{\if@Modulverantwortliche#1\else#2\fi}
+\newif\if@MSC
+\newcommand\ifMSC[2]{\if@MSC#1\else\#2\fi}
 \DeclareOption{Modulverantwortliche}{\@Modulverantwortlichetrue}
 \DeclareOption{tudeckblatt}{\TUDECKBLATTtrue}
 \DeclareOption{entwurf}{\ENTWURFtrue}
 \DeclareOption{postfix}{\PostfixMarkierungen}
 \DeclareOption{englischsprachig}{\@ENGLISCHtrue}
 \DeclareOption{daseminar}{\@DASEMINARtrue}
+\DeclareOption{msc}{\@MSCtrue}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrartcl}}
 \ProcessOptions\relax
 \renewcommand\documentclass[2][]{}
 \newcommand*\appendixmore{\addtokomafont{section}{\clearpage}}
-
-% Additional path for loading files
-\def\input@path{{../allgemein/}}
 
 % Language, fonts, and encodings
 \RequirePackage[english,naustrian]{babel}
@@ -64,7 +72,6 @@
     }%
     \expandafter\expandafter\expandafter\stop
   \fi
-  \RequirePackage{currfile}
 \fi
 \ifPDFTeX
   \RequirePackage[T1]{fontenc}
@@ -380,7 +387,6 @@
   }%
 }
 
-\newcommand*\ModulPfad{module/}
 \newcommand*\LadeModule[1]{%
   \def\@LadeModule{}%
   \applytolist\@@LadeModule{#1}%
@@ -389,7 +395,7 @@
 \newcommand\@@LadeModule[1]{%
   \g@addto@macro\@LadeModule{\LadeModul{#1}}%
 }
-\newcommand*\LadeModul[1]{\MODdefthis{#1}\input{\ModulPfad#1.tex}}
+\newcommand*\LadeModul[1]{\MODdefthis{#1}\input{#1.tex}}
 
 \renewcommand*\paragraph[1]%
   {\medskip\par\noindent\textbf{#1}\ \nopagebreak}

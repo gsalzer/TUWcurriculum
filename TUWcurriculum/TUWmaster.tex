@@ -1,4 +1,4 @@
-% TU Wien Curriculum 2023.6
+% TU Wien Curriculum 2023.7
 
 \newcommand*\Markierung{Master}
 \newcommand*\Studienart{Masterstudium}
@@ -55,11 +55,11 @@ vermittelt.
 
 Der Arbeitsaufwand für das Masterstudium \emph{\VAR{Titel}}
 beträgt \ECTS{\VAR{Ects}}-Punkte. Dies entspricht einer vorgesehenen
-Studiendauer von \VAR{Dauer}\,Semestern als Vollzeitstudium.
+Studiendauer von \VAR{Dauer}~Semestern als Vollzeitstudium.
 
-ECTS-Punkte (ECTS) sind ein Maß für den Arbeitsaufwand der Studierenden. 
-Ein Studienjahr umfasst 60 ECTS­-Punkte, wobei ein ECTS-Punkt 25 
-Arbeitsstunden entspricht (gemäß § 54 Abs. 2 UG).
+ECTS-Punkte (ECTS) sind ein Maß für den Arbeitsaufwand der Studierenden.
+Ein Studienjahr umfasst 60 ECTS-Punkte, wobei ein ECTS-Punkt 25
+Arbeitsstunden entspricht (gemäß §\,54 Abs.~2 UG).
 
 \section{Zulassung zum Masterstudium}\label{sec:ZM}
 
@@ -165,7 +165,9 @@ Der positive Abschluss des Masterstudiums erfordert:
 \item \label{it:mods} die positive Absolvierung der im
   Studienplan vorgeschriebenen Module, wobei ein Modul als positiv
   absolviert gilt, wenn die ihm gemäß Modulbeschreibung zuzurechnenden
-  Lehrveranstaltungen positiv absolviert wurden,
+  Lehrveranstaltungen positiv absolviert wurden%
+  \ifDASEMINAR{, sowie die positive Absolvierung der Lehrveranstaltung
+    \emph{Seminar für Diplomand\_innen}}{},
 \item \label{it:da} die Abfassung einer positiv beurteilten Diplomarbeit%
   \ifDEF{Diplompruefung}{,\VAR{Diplompruefung}}{} und
 \item die positive Absolvierung der kommissionellen
@@ -218,8 +220,8 @@ wobei diese wie ein Prüfungstermin für eine Vorlesung abgehalten
 werden müssen und \S\,15\,(6) des \emph{Studienrechtlichen Teils der 
 Satzung der Technischen Universität Wien} hier nicht anwendbar ist.
 
-Der positive Erfolg von Prüfungen und wissenschaftlichen sowie 
-künstlerischen Arbeiten ist mit "`sehr gut"' (1), "`gut"'
+Der positive Erfolg von Prüfungen und wissenschaftlichen sowie
+künstlerischen Arbeiten ist mit "`sehr gut"' (1), "`gut"'
 (2), "`befriedigend"' (3) oder "`genügend"' (4), der negative Erfolg
 ist mit "`nicht genügend"' (5) zu beurteilen. Bei Lehrveranstaltungen, 
 bei denen eine Beurteilung in der oben genannten Form nicht möglich ist, 
@@ -290,15 +292,21 @@ die mit \ECTS{27}-Punkten bewertet wird,
   sowie aus der kommissionellen Abschlussprüfung im Ausmaß von
   \ECTS{3}-Punkten.
 }
+
 \ifDEF{Diplomarbeit}{\VAR{Diplomarbeit}}{}%
 
 \section{Akademischer Grad}\label{sec:AG}
 
 Den Absolvent\_innen 
 des Masterstudiums \emph{\VAR{Titel}} wird der akademische Grad
-"`Diplom-Ingenieur"'/"`Diplom-Ingenieurin"'~-- abgekürzt
-"`Dipl.-Ing."' oder "`DI"' (international vergleichbar mit 
-"`Master of Science"')~-- verliehen.
+\ifMSC{%
+  "`Master of Science"'~-- abgekürzt "`MSc"'~--%
+}{%
+  "`Diplom-Ingenieur"'/"`Diplom-Ingenieurin"'~-- abgekürzt
+  "`Dipl.-Ing."' oder "`DI"' (international vergleichbar mit
+  "`Master of Science"')~--%
+}
+verliehen.
 
 \section{Qualit"atsmanagement}\label{sec:IQ}
 
