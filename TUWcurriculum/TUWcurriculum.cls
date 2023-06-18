@@ -55,7 +55,7 @@
 \renewcommand\documentclass[2][]{}
 
 %https://tex.stackexchange.com/questions/567526
-\usepackage{etoolbox}
+\RequirePackage{etoolbox}
 \apptocmd\appendix{\pretocmd\section{\clearpage}{}{}}{}{}
 
 % Language, fonts, and encodings
