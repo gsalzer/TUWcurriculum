@@ -1,4 +1,4 @@
-%% TU Wien Curriculum 2023.7
+%% TU Wien Curriculum 2023.8
 %% Copyright 2023 G. Salzer
 %
 % This work may be distributed and/or modified under the
@@ -24,7 +24,7 @@
 \edef\input@path{{\currfiledir}{module/}{../shared/}{../../shared/}{../../../shared/}}
 
 % Class stuff
-\ProvidesClass{TUWcurriculum}[TU Wien Curriculum 2023.7]
+\ProvidesClass{TUWcurriculum}[TU Wien Curriculum 2023.8]
 \RequirePackage{xcolor}
 \LoadClass[a4paper,12pt]{scrartcl}
 \setcounter{tocdepth}{1}
@@ -53,7 +53,10 @@
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrartcl}}
 \ProcessOptions\relax
 \renewcommand\documentclass[2][]{}
-\newcommand*\appendixmore{\addtokomafont{section}{\clearpage}}
+
+%https://tex.stackexchange.com/questions/567526
+\usepackage{etoolbox}
+\apptocmd\appendix{\pretocmd\section{\clearpage}{}{}}{}{}
 
 % Language, fonts, and encodings
 \RequirePackage[english,naustrian]{babel}
