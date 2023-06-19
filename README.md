@@ -14,12 +14,12 @@ There are three possibilities.
 
 2. *For several curricula:*
    - Move the *contents* of the folder `TUWcurriculum` (not the folder
-     itself) into a folder `allgemein`, which has to be on the same level as
-     the folders of the curricula.
-   - Copy the file `allgemein/TUWcurriculum-link.cls` into each folder
+     itself) into a folder *F* somewhere, where you want the common files to reside.
+   - Copy the file *F*`/TUWcurriculum-link.cls` into each folder
      containing a curriculum and rename it to `TUWcurriculum.cls`.
      This file contains just an `\input` statement loading the real
-     `TUWcurriculum.cls` in `allgemein`.
+     `TUWcurriculum.cls`. Adapt the path such that it reads, for example
+     `\input{../../`*F*`}`.
 
 3. *For general accessibility:*
    - Find out, where your TeX distribution searches for personal LaTeX
