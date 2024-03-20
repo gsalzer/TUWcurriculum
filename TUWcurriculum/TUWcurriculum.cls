@@ -42,7 +42,7 @@
 \newif\if@Modulverantwortliche
 \newcommand\ifModulverantwortliche[2]{\if@Modulverantwortliche#1\else#2\fi}
 \newif\if@MSC
-\newcommand\ifMSC[2]{\if@MSC#1\else\#2\fi}
+\newcommand\ifMSC[2]{\if@MSC#1\else#2\fi}
 \DeclareOption{Modulverantwortliche}{\@Modulverantwortlichetrue}
 \DeclareOption{tudeckblatt}{\TUDECKBLATTtrue}
 \DeclareOption{entwurf}{\ENTWURFtrue}
