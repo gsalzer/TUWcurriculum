@@ -1,5 +1,5 @@
-%% TU Wien Curriculum 2023.8
-%% Copyright 2023 G. Salzer
+%% TU Wien Curriculum 2025.1
+%% Copyright 2010-2025 G. Salzer
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either version 1.3
@@ -24,7 +24,7 @@
 \edef\input@path{{\currfiledir}{module/}{../shared/}{../../shared/}{../../../shared/}}
 
 % Class stuff
-\ProvidesClass{TUWcurriculum}[TU Wien Curriculum 2023.8]
+\ProvidesClass{TUWcurriculum}[TU Wien Curriculum 2025.1]
 \RequirePackage{xcolor}
 \LoadClass[a4paper,12pt]{scrartcl}
 \setcounter{tocdepth}{1}
@@ -234,6 +234,11 @@
     \MODnewenv[Kompetenzen]{FachlichMethodisch}
     \MODnewenv[Kompetenzen]{KognitivPraktisch}
     \MODnewenv[Kompetenzen]{SozialSelbst}
+  }{}
+  \newenvironment{Lernergebnisse}{
+    \MODnewenv[Lernergebnisse]{Intro}
+    \MODnewenv[Lernergebnisse]{Fachlich}
+    \MODnewenv[Lernergebnisse]{Ueberfachlich}
   }{}
   \MODnewenv{Inhalt}
   \newenvironment{ErwarteteVorkenntnisse}{

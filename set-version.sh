@@ -6,6 +6,8 @@ TUWCU=TUWcurriculum
 [ "$VERSION" ] || { echo "please specify version"; exit 1; }
 [ -d "$TUWCU" ] || { echo "folder '$TUWCU' not found"; exit 1; }
 
+YEAR="${VERSION/.*/}"
+
 cd "$TUWCU"
 for f in TUWbachelor.tex TUWcurriculum.cls TUWdeckblatt.tex TUWmaster.tex TUWmodul.tex TUWAoMaster.tex; do
     echo

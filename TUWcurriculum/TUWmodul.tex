@@ -1,4 +1,4 @@
-% TU Wien Curriculum 2023.8
+% TU Wien Curriculum 2025.1
 
 \typeout{>>> \MVAR{Titel}}
 \ifENTWURF
@@ -13,25 +13,41 @@
   \paragraph{Regelarbeitsaufwand:} \ECTS{\MVAR{Ects}}%
 }{}%
 
-\ifMDEF{KompetenzenIntro,KompetenzenFachlichMethodisch,%
-  KompetenzenKognitivPraktisch,KompetenzenSozialSelbst}{%
+\ifMDEF{LernergebnisseIntro,LernergebnisseFachlich,%
+  LernergebnisseUeberfachlich}{%
   \paragraph{Lernergebnisse:}%
-  \ifMDEF{KompetenzenIntro}{%
-    \MVAR{KompetenzenIntro}%
+  \ifMDEF{LernergebnisseIntro}{%
+    \MVAR{LernergebnisseIntro}%
   }{}%
-  \ifMDEF{KompetenzenFachlichMethodisch}{%
-    \subparagraph{Fachliche und methodische Kompetenzen:}%
-      \MVAR{KompetenzenFachlichMethodisch}%
+  \ifMDEF{LernergebnisseFachlich}{%
+    \subparagraph{Fachkompetenzen:}%
+      \MVAR{LernergebnisseFachlich}%
   }{}%
-  \ifMDEF{KompetenzenKognitivPraktisch}{%
-    \subparagraph{Kognitive und praktische Kompetenzen:}%
-      \MVAR{KompetenzenKognitivPraktisch}%
+  \ifMDEF{LernergebnisseUeberfachlich}{%
+    \subparagraph{Überfachliche Kompetenzen:}%
+      \MVAR{LernergebnisseUeberfachlich}%
   }{}%
-  \ifMDEF{KompetenzenSozialSelbst}{%
-    \subparagraph{Soziale Kompetenzen und Selbstkompetenzen:}%
-      \MVAR{KompetenzenSozialSelbst}%
+}{%
+  \ifMDEF{KompetenzenIntro,KompetenzenFachlichMethodisch,%
+    KompetenzenKognitivPraktisch,KompetenzenSozialSelbst}{%
+    \paragraph{Lernergebnisse:}%
+    \ifMDEF{KompetenzenIntro}{%
+      \MVAR{KompetenzenIntro}%
+    }{}%
+    \ifMDEF{KompetenzenFachlichMethodisch}{%
+      \subparagraph{Fachliche und methodische Kompetenzen:}%
+        \MVAR{KompetenzenFachlichMethodisch}%
+    }{}%
+    \ifMDEF{KompetenzenKognitivPraktisch}{%
+      \subparagraph{Kognitive und praktische Kompetenzen:}%
+        \MVAR{KompetenzenKognitivPraktisch}%
+    }{}%
+    \ifMDEF{KompetenzenSozialSelbst}{%
+      \subparagraph{Soziale Kompetenzen und Selbstkompetenzen:}%
+        \MVAR{KompetenzenSozialSelbst}%
+    }{}%
   }{}%
-}{}%
+}%
 
 \ifMDEF{Inhalt}{%
   \paragraph{Inhalt:}%
