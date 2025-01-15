@@ -1,4 +1,4 @@
-%% TU Wien Curriculum 2025.1
+%% TU Wien Curriculum 2025.2
 %% Copyright 2010-2025 G. Salzer
 %
 % This work may be distributed and/or modified under the
@@ -24,9 +24,10 @@
 \edef\input@path{{\currfiledir}{module/}{../shared/}{../../shared/}{../../../shared/}}
 
 % Class stuff
-\ProvidesClass{TUWcurriculum}[TU Wien Curriculum 2025.1]
+\ProvidesClass{TUWcurriculum}[TU Wien Curriculum 2025.2]
 \RequirePackage{xcolor}
 \LoadClass[a4paper,12pt]{scrartcl}
+\RedeclareSectionCommand[tocnumwidth=1.9em]{section}
 \setcounter{tocdepth}{1}
 \setkomafont{sectionentry}{}
 \setkomafont{sectionentrypagenumber}{}
@@ -53,6 +54,11 @@
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrartcl}}
 \ProcessOptions\relax
 \renewcommand\documentclass[2][]{}
+
+\renewcommand{\thesection}{§\,\arabic{section}}
+%-----------------------------
+\renewcommand{\autodot}{}% Remove all end-of-counter dots
+%-----------------------------
 
 %https://tex.stackexchange.com/questions/567526
 \RequirePackage{etoolbox}
@@ -229,7 +235,7 @@
   \MODnewcmd{Redaktion}
   \MODnewcmd{Version}
   \MODnewenv{Kurzbeschreibung}
-  \newenvironment{Kompetenzen}{
+  \newenvironment{Kompetenzen}{% obsolete, use Lernergebnisse
     \MODnewenv[Kompetenzen]{Intro}
     \MODnewenv[Kompetenzen]{FachlichMethodisch}
     \MODnewenv[Kompetenzen]{KognitivPraktisch}
@@ -239,6 +245,9 @@
     \MODnewenv[Lernergebnisse]{Intro}
     \MODnewenv[Lernergebnisse]{Fachlich}
     \MODnewenv[Lernergebnisse]{Ueberfachlich}
+    \MODnewenv[Lernergebnisse]{Methodenkompetenzen}
+    \MODnewenv[Lernergebnisse]{Sozialkompetenzen}
+    \MODnewenv[Lernergebnisse]{Selbstkompetenzen}
   }{}
   \MODnewenv{Inhalt}
   \newenvironment{ErwarteteVorkenntnisse}{
@@ -409,6 +418,8 @@
   {\medskip\par\noindent\textbf{#1}\ \nopagebreak}
 \renewcommand*\subparagraph[1]%
   {\smallskip\par\noindent\textit{#1}\ \nopagebreak}
+\newcommand*\subsubparagraph[1]%
+  {\par\noindent#1\ \nopagebreak}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -499,6 +510,7 @@
   \CURnewcmd{Art}
   \CURnewcmd{GueltigAb}
   \CURnewcmd{Beschlossen}
+  \CURnewcmd{UeBestimmAbJahr}%Jahr des letzten Studienplanwechsels  
   \CURnewcmd{Version}
   \CURnewcmd{Redaktion}
   \CURnewcmd{Fakultaet}
@@ -560,6 +572,7 @@
   \CURnewcmd{Art}
   \CURnewcmd{GueltigAb}
   \CURnewcmd{Beschlossen}
+  \CURnewcmd{UeBestimmAbJahr}%Jahr des letzten Studienplanwechsels
   \CURnewcmd{Version}
   \CURnewcmd{Redaktion}
   \CURnewcmd{Fakultaet}

@@ -9,7 +9,7 @@ TUWCU=TUWcurriculum
 YEAR="${VERSION/.*/}"
 
 cd "$TUWCU"
-for f in TUWbachelor.tex TUWcurriculum.cls TUWdeckblatt.tex TUWmaster.tex TUWmodul.tex TUWAoMaster.tex; do
+for f in ModuleExample.tex ModuleTemplate.tex TUWbachelor.tex TUWcurriculum.cls TUWdeckblatt.tex TUWmaster.tex TUWmodul.tex TUWAoMaster.tex; do
     echo
     echo "*** $f ***"
     sed "s/TU Wien Curriculum [0-9.]*/TU Wien Curriculum $VERSION/" "$f" > tmp

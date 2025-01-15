@@ -1,4 +1,4 @@
-% TU Wien Curriculum 2025.1
+% TU Wien Curriculum 2025.2
 
 \typeout{>>> \MVAR{Titel}}
 \ifENTWURF
@@ -13,41 +13,56 @@
   \paragraph{Regelarbeitsaufwand:} \ECTS{\MVAR{Ects}}%
 }{}%
 
-\ifMDEF{LernergebnisseIntro,LernergebnisseFachlich,%
-  LernergebnisseUeberfachlich}{%
+\ifMDEF{%
+  LernergebnisseIntro,LernergebnisseFachlich,LernergebnisseUeberfachlich,%
+  LernergebnisseMethodenkompetenzen,LernergebnisseSozialkompetenzen,LernergebnisseSelbstkompetenzen,%
+  KompetenzenIntro,KompetenzenFachlichMethodisch,KompetenzenKognitivPraktisch,KompetenzenSozialSelbst%
+}{%
   \paragraph{Lernergebnisse:}%
   \ifMDEF{LernergebnisseIntro}{%
     \MVAR{LernergebnisseIntro}%
   }{}%
-  \ifMDEF{LernergebnisseFachlich}{%
+  \ifMDEF{KompetenzenIntro}{%
+    \MVAR{KompetenzenIntro}%
+  }{}%
+  \ifMDEF{LernergebnisseFachlich,KompetenzenFachlichMethodisch,KompetenzenKognitivPraktisch}{%
     \subparagraph{Fachkompetenzen:}%
+    \ifMDEF{LernergebnisseFachlich}{%
       \MVAR{LernergebnisseFachlich}%
-  }{}%
-  \ifMDEF{LernergebnisseUeberfachlich}{%
-    \subparagraph{Überfachliche Kompetenzen:}%
-      \MVAR{LernergebnisseUeberfachlich}%
-  }{}%
-}{%
-  \ifMDEF{KompetenzenIntro,KompetenzenFachlichMethodisch,%
-    KompetenzenKognitivPraktisch,KompetenzenSozialSelbst}{%
-    \paragraph{Lernergebnisse:}%
-    \ifMDEF{KompetenzenIntro}{%
-      \MVAR{KompetenzenIntro}%
     }{}%
     \ifMDEF{KompetenzenFachlichMethodisch}{%
-      \subparagraph{Fachliche und methodische Kompetenzen:}%
-        \MVAR{KompetenzenFachlichMethodisch}%
+      \subsubparagraph{Fachliche und methodische Kompetenzen:}%
+      \MVAR{KompetenzenFachlichMethodisch}%
     }{}%
     \ifMDEF{KompetenzenKognitivPraktisch}{%
-      \subparagraph{Kognitive und praktische Kompetenzen:}%
-        \MVAR{KompetenzenKognitivPraktisch}%
-    }{}%
-    \ifMDEF{KompetenzenSozialSelbst}{%
-      \subparagraph{Soziale Kompetenzen und Selbstkompetenzen:}%
-        \MVAR{KompetenzenSozialSelbst}%
+      \subsubparagraph{Kognitive und praktische Kompetenzen:}%
+      \MVAR{KompetenzenKognitivPraktisch}%
     }{}%
   }{}%
-}%
+  \ifMDEF{LernergebnisseUeberfachlich,KompetenzenSozialSelbst%
+    LernergebnisseMethodenkompetenzen,LernergebnisseSozialkompetenzen,LernergebnisseSelbstkompetenzen%
+  }{%
+    \subparagraph{Überfachliche Kompetenzen:}%
+    \ifMDEF{LernergebnisseUeberfachlich}{%
+      \MVAR{LernergebnisseUeberfachlich}%
+    }{}%
+    \ifMDEF{KompetenzenSozialSelbst}{%
+      \MVAR{KompetenzenSozialSelbst}%
+    }{}%
+    \ifMDEF{LernergebnisseMethodenkompetenzen}{%
+      \subsubparagraph{Methodenkompetenzen:}%
+      \MVAR{LernergebnisseMethodenkompetenzen}%
+    }{}%
+    \ifMDEF{LernergebnisseSozialkompetenzen}{%
+      \subsubparagraph{Sozialkompetenzen:}%
+      \MVAR{LernergebnisseSozialkompetenzen}%
+    }{}%
+    \ifMDEF{LernergebnisseSelbstkompetenzen}{%
+      \subsubparagraph{Selbstkompetenzen:}%
+      \MVAR{LernergebnisseSelbstkompetenzen}%
+    }{}%
+  }{}%
+}{}%
 
 \ifMDEF{Inhalt}{%
   \paragraph{Inhalt:}%
@@ -57,17 +72,19 @@
 \ifMDEF{VorkenntnisseIntro,VorkenntnisseFachlichMethodisch,%
   VorkenntnisseKognitivPraktisch,VorkenntnisseSozialSelbst,Vormodule}{%
   \paragraph{Erwartete Vorkenntnisse:}%
-    \ifMDEF{VorkenntnisseIntro}{\MVAR{VorkenntnisseIntro}}{}%
+  \ifMDEF{VorkenntnisseIntro}{%
+    \MVAR{VorkenntnisseIntro}%
+  }{}%
   \ifMDEF{VorkenntnisseFachlichMethodisch}{%
-    \subparagraph{Fachliche und methodische Kompetenzen:}%
+    \par\noindent
     \MVAR{VorkenntnisseFachlichMethodisch}%
   }{}%
   \ifMDEF{VorkenntnisseKognitivPraktisch}{%
-    \subparagraph{Kognitive und praktische Kompetenzen:}%
+    \par\noindent
     \MVAR{VorkenntnisseKognitivPraktisch}%
   }{}%
   \ifMDEF{VorkenntnisseSozialSelbst}{%
-    \subparagraph{Soziale Kompetenzen und Selbstkompetenzen:}%
+    \par\noindent
     \MVAR{VorkenntnisseSozialSelbst}%
   }{}%
   \ifMDEF{Vormodule}{%
@@ -81,14 +98,35 @@
   \MVAR{VerpflichtendeVoraussetzungen}%
 }{}%
 
-\ifMDEF{LehrLernformenBeurteilung}{%
-  \paragraph{Angewendete Lehr- und Lernformen und geeignete Leistungsbeurteilung:}
-  \MVAR{LehrLernformenBeurteilung}%
-}{}%
+\paragraph{Angewendete Lehr- und Lernformen und geeignete Leistungsbeurteilung:}
+  \ifMDEF{LehrLernformenBeurteilung}{%
+    \MVAR{LehrLernformenBeurteilung}%
+    \smallskip\par\noindent
+  }{}%
+  Die angewendeten Lehr- und Lernformen sind im Informationssystem zu
+  Studien und Lehre bei jeder Lehrveranstaltung vor Beginn des
+  Semesters anzugeben; ebenso die Prüfungsmodalitäten.
 
 \ifMDEF{Lehrveranstaltungen}{%
   \paragraph{Lehrveranstaltungen des Moduls:}%
   \begin{SammleLVs}%
     \MVAR{Lehrveranstaltungen}%
   \end{SammleLVs}%
+% [Arbeitsanweisung] Treten bei einer Lehrveranstaltung des Moduls eine ressourcenbedingte Teilnehmer_innen­
+% beschränkung auf, sind sofern es nicht möglich ist eine Alternative mit gleichem Arbeitsaufwand zu wählen
+% die Anzahl der zu vergebenen Plätze und das Vergabeverfahren verpflichtend hier zu beschreiben (vgl. §7
+% Studierbarkeit und Mobilität).
+% Die Standardformulierung in der Modulbeschreibung: “Bei der Lehrveranstaltung xy kann es zu Teilnehmer_innen­
+% beschränkung kommen. Es stehen z Plätze zur Verfügung. Diese Plätze werden im Informationssystem für Lehre
+% nach dem Prinzip “first­come­first­served” vergeben.”
+% Es steht den Studienkommissionen frei andere Vergaberegeln festzulegen. Diese sind hier entsprechend zu
+% beschreiben.
+% [Anmerkung] Hier einige von Studienkommissionen gewünschte Textungen zur Erhöhung, die optional (nicht
+% verpflichtend) verwendet werden können (vgl. §7 Studierbarkeit und Mobilität).:
+% “Alternativ können im Zuge einer Mobilität erreichten Zeugnisse, die das Erreichen von in diesem Modul vor­
+% gesehenen Lernergebnisse nachweisen, (optional: im Ausmaß von bis zu xx ECTS) zur Absolvierung dieses
+% Moduls verwendet werden”
+% “Alternativ können im Zuge einer Mobilität erreichten Zeugnisse, die das Erreichen von Qualifikationen nach
+% Qualifikationsprofil §2 nachweisen, (optional: im Ausmaß von bis zu xx ECTS) zur Absolvierung dieses Moduls
+% verwendet werden.”
 }{}%

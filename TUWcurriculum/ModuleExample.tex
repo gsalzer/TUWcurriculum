@@ -1,0 +1,124 @@
+% TU Wien Curriculum 2025.2
+
+% Use German or English, depending on the curriculum.
+% Ask the head of the curricula commission (Studienkommission) for instructions.
+\documentclass{TUWcurriculum}
+\begin{Modul}
+  % title of module
+  \Titel{Theoretische Informatik}
+
+  % size of module in Ects; may be a range, like "6,0--9,0"
+  \Ects{6,0}
+
+  % responsible person, only used internally
+  \Redaktion{Gernot Salzer}
+
+  % version information, e.g. the current date; only used internally
+  \Version{2025-01-09}
+
+  % short description, used standalone in the main part of the curriculum
+  \begin{Kurzbeschreibung}
+    Dieses Modul führt in die Kerngebiete der Theoretischen Informatik
+    ein, wobei folgende Themengebiete im Mittelpunkt stehen: Automaten
+    und formale Sprachen, Berechenbarkeit und Komplexität, sowie die
+    Grundlagen der formalen Semantik von Programmiersprachen.
+  \end{Kurzbeschreibung}
+
+  % THE FOLLOWING SECTIONS ARE USED IN THE MODULE DESCRIPTION IN THE APPENDIX.
+  
+  % learning outcomes
+  \begin{Lernergebnisse}
+    % introductory sentences beneath the headline
+    \begin{Intro}
+      Dieses Modul befasst sich mit den theoretischen Grundlagen der
+      Informatik.
+    \end{Intro}
+
+    % topic-specific/technical competencies taught by the module
+    \begin{Fachlich}
+      Fundamentale Konzepte und Resultate in folgenden Gebieten:
+      Automaten und formalen Sprachen, Berechenbarkeit und Komplexität
+      sowie die Grundlagen der formalen Semantik von Programmiersprachen.
+    \end{Fachlich}
+
+    % interdisciplinary competencies taught by the module
+    \begin{Ueberfachlich}
+      Die Studierenden erwerben die Fähigkeit, formale Beschreibungen
+      lesen und verstehen und Konzepte formal-mathematisch beschreiben
+      zu können. Weiters lernen sie, die Struktur von Beweisen und
+      Argumentationen zu verstehen und selber solche zu führen.
+      Weiters können die Studierenden ethische Fragestellungen im
+      Kontext der Inhalte des Moduls identifizieren, formulieren und
+      diskutieren.
+    \end{Ueberfachlich}
+
+    % Optional: Unterteilung "Überfachlich" in die folgenden Gruppen
+    \begin{Methodenkompetenzen}
+      Zeitmanagement, Arbeitstechniken,
+      wissenschaftliches Schreiben, Umgang mit KI,
+      Präsentationstechniken, Wissenschaftskommunikation
+    \end{Methodenkompetenzen}
+    \begin{Sozialkompetenzen}
+      Teamfähigkeit, Konfliktfähigkeit,
+      Kooperationsfähigkeit, Kommunikationsfähigkeit,
+      Gender­ und Diversitätskompetenz
+    \end{Sozialkompetenzen}
+    \begin{Selbstkompetenzen}
+      Selbstmanagement, Eigeninitiative,
+      Zielorientierung, Stressbewältigung, akademische Integrität
+    \end{Selbstkompetenzen}
+  \end{Lernergebnisse}
+
+  % specification of contents
+  \begin{Inhalt}
+    \begin{itemize}
+    \item Automatentheorie: deterministische und nichtdeterministische
+      Automaten, Kellerautomaten, Turing-Maschinen
+    \item Formale Sprachen: reguläre Sprachen, kontextfreie Sprachen,
+      Chomsky Hierarchie
+    \item Berechenbarkeit und Komplexität: universelle
+      Berechenbarkeit, Unentscheidbarkeit, NP-Vollständigkeit
+    \item Grundlagen der operationalen und axiomatischen Semantik von
+      Programmiersprachen
+    \end{itemize}
+  \end{Inhalt}
+
+  % prerequisites
+  \begin{ErwarteteVorkenntnisse}
+    % competencies and knowledge expected from students at the start
+    \begin{Intro}
+      Grundlegende Kenntnisse der mathematischen Argumentation, der
+      Algorithmik und der Modellierung mit Hilfe von Automaten und formalen
+      Sprachen.
+    \end{Intro}
+
+    % List the modules where students can acquire the prerequisites above.
+    \begin{Vormodule}
+      Diese Vorausetzungen werden in den Modulen
+	\emph{\MODTitel{MathematischesArbeiten}},
+        \emph{\MODTitel{AlgorithmenUndDatenstrukturen}} sowie
+        \emph{\MODTitel{GrundzuegeDigitalerSysteme}} vermittelt.
+    \end{Vormodule}
+  \end{ErwarteteVorkenntnisse}
+
+  % Mandatory requirements; usually empty, need to be approved by the curricula commission.
+  \begin{VerpflichtendeVoraussetzungen}
+    Studieneingangs- und Orientierungsphase.
+  \end{VerpflichtendeVoraussetzungen}
+
+  % Teaching methods, examination modes
+  \begin{LehrLernformenBeurteilung}
+    Die Inhalte werden in einem Vorlesungsteil vorgestellt und in
+    begleitenden Übungen von den Studierenden erarbeitet. Die
+    Beurteilung erfolgt auf Basis schriftlicher Tests und der
+    kontinuierlich in den Übungen erbrachten Leistungen. Der
+    Übungsbetrieb und die Tests können computerunterstützt
+    durchgeführt werden.
+  \end{LehrLernformenBeurteilung}
+
+  % Course(s) implementing the module
+  \begin{Lehrveranstaltungen}
+    % \LV{Ects}{Sst}{Type}{Title}[UniqueKey]
+    \LV{6,0}{4,0}{VU}{Theoretische Informatik}[TheoretischeInformatikVU]
+  \end{Lehrveranstaltungen}
+\end{Modul}
